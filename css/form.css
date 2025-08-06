@@ -82,7 +82,7 @@ video {
 }
 
 body {
-  font-family: "GreycliffCF-DemiBold";
+  font-family: 'Poppins', sans-serif;
   background-attachment: fixed;
   margin: 0 auto;
 }
@@ -849,7 +849,7 @@ ul {
 }
 
 .zf-submitColor {
-  font-family: "GreycliffCF-DemiBold";
+  
   color: #6c6d73;
   border: 1px solid transparent;
   font-weight: 600;
