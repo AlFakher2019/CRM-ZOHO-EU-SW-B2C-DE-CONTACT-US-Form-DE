@@ -188,7 +188,7 @@ ul {
   border-radius: 4px;
   padding: 5px;
   font-size: 15px;
-  color: rgb(37, 44, 62);
+  color: #101114;
   padding: 11px 10px 10px 10px;
   height: 56px;
   transition: 0.3s;
@@ -309,12 +309,13 @@ ul {
   background: #fff;
   border: 1px solid rgba(184, 187, 211, 1);
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif !important;
   height: 56px;
   transition: 0.3s;
   vertical-align: middle;
   position: relative;
-  color: rgba(37, 44, 62, 1);
+  color: #101114;
 }
 .zf-form-sBox:focus,
 .zf-form-sBox:focus:hover {
@@ -852,9 +853,10 @@ ul {
   
   color: #6c6d73;
   border: 1px solid transparent;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   background: #ebebed;
+  font-family: 'Poppins', sans-serif;
   border-radius: 150px;
   min-width: 100px;
   transition: transform 0.25s cubic-bezier(0.33, 0.04, 0.63, 0.93),
