@@ -8,6 +8,7 @@
         rel="stylesheet">
     <script src="js/validation.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 </head>
 
@@ -94,7 +95,7 @@
                                         </label>
                                         <div class="zf-tempContDiv">
                                             <span>
-                                                <input type="text" name="Email" checktype="c5" value="" maxlength="255"
+                                                <input type="text" name="Email" id="Email" checktype="c5" value="" maxlength="255"
                                                     fieldType=9 placeholder="" /> </span>
                                             <p id="Email_error" class="zf-errorMessage" style="display: none;">Ungültiger Wert</p>
                                         </div>
@@ -191,17 +192,26 @@
         var isSalesIQIntegrationEnabled = false;
         var salesIQFieldsArray = [];
 
-        window.addEventListener('message', function (event) {
-            const email = event.data;
-
-            if (typeof email === "string" && email.includes("@")) {
-                const emailInput = document.forms["form"]["Email"];
-                if (emailInput) {
-                    emailInput.value = email;
-                }
-            }
-        });
+       
 
 
     </script>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("message", function (event) {
+      var email = event.data;
+      document.getElementById("Email").value = email;
+
+      let checkField = setInterval(function () {
+        if ($("#Email").val() !== "") {
+          $("#loader").hide();
+          clearInterval(checkField);
+        }
+      }, 100);
+
+      $("#loader").hide();
+    });
+  });
+</script>
 </body>
+</html>
