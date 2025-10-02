@@ -196,7 +196,7 @@
 
 
     </script>
-    <script>
+    <!-- <script>
   document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("message", function (event) {
       var email = event.data;
@@ -212,6 +212,37 @@
       $("#loader").hide();
     });
   });
+</script> -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("message", function (event) {
+      
+      // Initialize empty email variable
+      var email = "";
+
+      // Check if event.data is an object with an email property
+      if (typeof event.data === "object" && event.data !== null && typeof event.data.email === "string") {
+        email = event.data.email;
+
+      // Fallback if event.data is just a string (email directly)
+      } else if (typeof event.data === "string") {
+        email = event.data;
+      }
+
+      // Assign email safely (was: document.getElementById("Email").value = event.data;)
+      document.getElementById("Email").value = email;
+
+      let checkField = setInterval(function () {
+        if ($("#Email").val() !== "") {
+          $("#loader").hide();
+          clearInterval(checkField);
+        }
+      }, 100);
+
+      $("#loader").hide();
+    });
+  });
 </script>
+
 </body>
 </html>
