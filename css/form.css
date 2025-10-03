@@ -1847,3 +1847,23 @@ select {
 }
 
 
+html, body {
+        overflow-y: scroll;         
+        -ms-overflow-style: none;   
+        scrollbar-width: none;      
+    }
+    html::-webkit-scrollbar, 
+    body::-webkit-scrollbar {
+        display: none;              
+    }
+	@media (max-width: 768px) {
+    html, body {
+        overflow-y: scroll;         
+        -ms-overflow-style: none;   
+        scrollbar-width: none;      
+    }
+    html::-webkit-scrollbar, 
+    body::-webkit-scrollbar {
+        display: none;              
+    }
+}
