@@ -199,6 +199,7 @@
     <script>
   document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("message", function (event) {
+        console.log("Message received:", event.data); // Debugging line
       var email = event.data;
       document.getElementById("Email").value = email;
 
