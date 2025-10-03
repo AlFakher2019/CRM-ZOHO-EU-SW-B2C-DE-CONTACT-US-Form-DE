@@ -197,47 +197,21 @@
 
     </script>
     <script>
-//   document.addEventListener("DOMContentLoaded", function () {
-//     window.addEventListener("message", function (event) {
-//       var email = event.data;
-//       document.getElementById("Email").value = email;
+  document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("message", function (event) {
+      var email = event.data;
+      document.getElementById("Email").value = email;
 
-//       let checkField = setInterval(function () {
-//         if ($("#Email").val() !== "") {
-//           $("#loader").hide();
-//           clearInterval(checkField);
-//         }
-//       }, 100);
-
-//       $("#loader").hide();
-//     });
-//   });
-
- window.addEventListener("message", function (event) {
-    const emailInput = document.getElementById("Email");
-    const loader = document.getElementById("loader");
-
-    // Get email from message
-    let email = "";
-    if (typeof event.data === "string") {
-      email = event.data;
-    } else if (typeof event.data === "object" && event.data.email) {
-      email = event.data.email;
-    }
-
-    if (emailInput && email) {
-      emailInput.value = email;
-
-      // Re-check email field until it's filled, then hide loader
-      const checkField = setInterval(function () {
-        if (emailInput.value !== "") {
-          if (loader) loader.style.display = "none";
+      let checkField = setInterval(function () {
+        if ($("#Email").val() !== "") {
+          $("#loader").hide();
           clearInterval(checkField);
         }
       }, 100);
-    }
-  });
 
+      $("#loader").hide();
+    });
+  });
 </script>
 
 
