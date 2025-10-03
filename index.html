@@ -196,7 +196,7 @@
 
 
     </script>
-    <!-- <script>
+    <script>
   document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("message", function (event) {
       var email = event.data;
@@ -210,34 +210,6 @@
       }, 100);
 
       $("#loader").hide();
-    });
-  });
-</script> -->
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    window.addEventListener("message", function (event) {
-      // Handle both string and object messages
-      var email = "";
-
-      if (typeof event.data === "string") {
-        email = event.data;
-      } else if (typeof event.data === "object" && event.data !== null) {
-        email = event.data.email || "";
-      }
-
-      if (email) {
-        document.getElementById("Email").value = email;
-
-        let checkField = setInterval(function () {
-          if ($("#Email").val() !== "") {
-            $("#loader").hide();
-            clearInterval(checkField);
-          }
-        }, 100);
-
-        $("#loader").hide();
-      }
     });
   });
 </script>
